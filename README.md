@@ -39,4 +39,4 @@ Our project seeks to overcome these obstacles by automating the segmentation pro
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YourUsername/Liver-Tumor-Segmentation.git
+   git clone https://github.com/Faizan-Kh/Liver-Tumor-Segmentation.git
