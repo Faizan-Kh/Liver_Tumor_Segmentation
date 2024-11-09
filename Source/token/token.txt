@@ -1,3 +1,0 @@
-token = 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
-
-git remote set-url origin https://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@github.com/Faizan-Kh/Liver_Tumor_Segmentation
