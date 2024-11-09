@@ -38,7 +38,7 @@ def save_slice(slice_2d, output_dir, volume_index, slice_index):
     slice_image.save(slice_filename)
     print(f"Saved: {slice_filename}")
 
-def process_volume(ct_scan_path, output_dir, volume_index, liver_threshold=(40, 80)):
+def process_volume(ct_scan_path, output_dir, volume_index, liver_threshold=(0, 200)):
     """ Process a single volume and save its 2D slices. """
     ct_data = load_ct_scan(ct_scan_path)
     liver_data = apply_threshold(ct_data, liver_threshold)
@@ -48,13 +48,13 @@ def process_volume(ct_scan_path, output_dir, volume_index, liver_threshold=(40, 
         normalized_slice = normalize_slice(slice_2d)
         save_slice(normalized_slice, output_dir, volume_index, i)
 
-def process_all_volumes(volume_paths, output_dir, liver_threshold=(-20, 180)):
+def process_all_volumes(volume_paths, output_dir, liver_threshold=(00, 200)):
     """ Process multiple volumes, applying threshold and saving organized slices. """
-    for volume_index, ct_scan_path in enumerate(volume_paths, start=21):
+    for volume_index, ct_scan_path in enumerate(volume_paths, start=17):
         print(f"Processing Volume {volume_index} from: {ct_scan_path}")
         process_volume(ct_scan_path, output_dir, volume_index, liver_threshold)
 
 # Example usage
-volume_paths = [f'/home/fawad/FA21-BSE-012/Fall 24/Senior Design Project 1/fyp/Liver_Tumor_Segmentation/Source/data/LITS17/volume-{i}.nii' for i in range(21, 22)]  # Replace with actual paths
+volume_paths = [f'../data/LITS17/volume-{i}.nii' for i in range(17, 20)]  # Replace with actual paths
 output_dir = 'LITS17_volume_slices'  # Main output directory
 process_all_volumes(volume_paths, output_dir)

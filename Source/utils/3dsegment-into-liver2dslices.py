@@ -55,13 +55,13 @@ def process_volume(mask_path, output_dir, volume_index):
 
 def process_all_volumes(mask_paths, output_dir):
     """ Process multiple volumes, segment the liver and tumor using their respective masks, and save organized slices. """
-    for volume_index, mask_path in enumerate(mask_paths, start=21):
+    for volume_index, mask_path in enumerate(mask_paths, start=13):
         print(f"Processing and segmenting Volume {volume_index} from: {mask_path}")
         process_volume(mask_path, output_dir, volume_index)
 
 
 # Example usage for LITS17
 # Replace these with actual paths to your liver masks
-mask_paths = [f'/home/fawad/FA21-BSE-012/Fall 24/Senior Design Project 1/fyp/Liver_Tumor_Segmentation/Source/data/LITS17/segmentation-{i}.nii' for i in range(21, 22)]  # Update to actual mask paths
+mask_paths = [f'/home/fawad/FA21-BSE-012/Fall 24/Senior Design Project 1/fyp/Liver_Tumor_Segmentation/Source/data/LITS17/segmentation-{i}.nii' for i in range(13, 17)]  # Update to actual mask paths
 output_dir = 'LITS17_segmented_slices'  # Main output directory for segmented images
 process_all_volumes(mask_paths, output_dir)
