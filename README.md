@@ -31,7 +31,6 @@ Our project seeks to overcome these obstacles by automating the segmentation pro
 | Python              | 3.12.4    | Main programming language                    |
 | PyTorch             | 2.5.1     | Deep learning framework for nnFormer         |
 | Flask               | 2.1.3     | Backend for web application                  |
-| Streamlit           | Latest    | Frontend for image visualization             |
 | NumPy, Pandas       | Latest    | Data handling and preprocessing              |
 | Matplotlib          | Latest    | Visualization of results                     |
 | Lits17 Dataset      | 2017      | Medical imaging dataset for liver segmentation|
@@ -39,4 +38,4 @@ Our project seeks to overcome these obstacles by automating the segmentation pro
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YourUsername/Liver-Tumor-Segmentation.git
+   git clone https://github.com/Faizan-Kh/Liver-Tumor-Segmentation.git
