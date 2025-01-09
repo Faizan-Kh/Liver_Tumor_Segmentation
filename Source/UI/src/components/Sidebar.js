@@ -5,15 +5,15 @@ function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className="w-1/4 bg-gray-100 shadow-lg h-screen p-6">
+    <aside className="h-full w-1/4 bg-gray-100 shadow-lg h-screen p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Navigation</h2>
       <nav className="space-y-4">
         {[
           { path: "/", label: "Home" },
           { path: "/workspace/upload", label: "Upload Image" },
-          { path: "/workspace/show", label: "Show Images" },
+          { path: "/workspace/show", label: "View Segmentation" },
           { path: "/workspace/pie", label: "Pie Chart" },
-          { path: "/about", label: "About" },
+          { path: "/about", label: "Team" },
         ].map(({ path, label }) => (
           <Link
             key={path}

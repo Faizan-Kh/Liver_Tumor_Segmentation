@@ -1,121 +1,95 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion"; // For smooth animations
 
 function AboutPage() {
-  const [expanded, setExpanded] = useState(null);
-
-  const toggleSection = (section) => {
-    setExpanded(expanded === section ? null : section);
-  };
+  // Data for supervisor and committee members
+  const teamMembers = [
+    {
+      name: "Dr. Mubashir Ahmad",
+      designation: "Supervisor",
+      imageUrl: "mubashirahmad.jpg", // Replace with actual image URL
+      description: "Research Interests: Medical Imaging, Image Segmentation, Image Classification, and Image Recognition.",
+    },
+    {
+      name: "Mukhtiar Zamin",
+      designation: "Committee Member",
+      imageUrl: "mukhtiarzamin.png", // Replace with actual image URL
+      description: "Experienced in software engineering, specializing in system architecture, scalable applications, and efficient software design for complex environments.",
+    },
+    {
+      name: "Bushra Mushtaq",
+      designation: "Committee Member",
+      imageUrl: "bushramushtaq.png", // Replace with actual image URL
+      description: "Area of Interest: Computer Science.",
+    },
+    {
+      name: "Ehzaz Mustafa",
+      designation: "Committee Member",
+      imageUrl: "ehzazmustafa.png", // Replace with actual image URL
+      description: "Research Interests: Deep Learning, Digital Twins and Metaverse, Federated Learning, and Intelligent Networks.",
+    },
+  ];
 
   return (
-    <div className="max-w-screen-lg mx-auto mt-5 p-6 bg-gradient-to-br from-blue-50 to-white rounded shadow-lg overflow-hidden">
+    <div className="max-w-screen-lg mx-auto mt-5 p-6 bg-grey-50 rounded shadow-lg overflow-hidden">
       {/* Header */}
-      <h2 className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse">
-        About Us
+      <h2
+        className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse hover:text-blue-600 transition-all duration-300 ease-in-out"
+      >
+        Supervisor and Committee Members
       </h2>
 
-      {/* Purpose Section */}
+
+      {/* Supervisor Section */}
       <section className="mb-6">
-        <div
-          className="cursor-pointer p-3 rounded-lg bg-blue-100 hover:bg-blue-200 transition-all duration-300"
-          onClick={() => toggleSection("purpose")}
-        >
-          <h3 className="text-xl font-semibold text-gray-700 flex items-center">
-            Purpose{" "}
-            <span
-              className={`ml-auto transform transition-transform ${
-                expanded === "purpose" ? "rotate-180" : "rotate-0"
-              }`}
-            >
-              ▼
-            </span>
-          </h3>
+
+        <div className="flex justify-center mb-6">
+          {teamMembers
+            .filter((member) => member.designation === "Supervisor")
+            .map((supervisor, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center text-center bg-white rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <img
+                  src={supervisor.imageUrl}
+                  alt={supervisor.name}
+                  className="w-40 h-40 rounded-full mb-4 object-cover"
+                />
+                <h4 className="text-xl font-semibold text-gray-800">{supervisor.name}</h4>
+                <p className="text-sm text-gray-500">{supervisor.designation}</p>
+                <p className="text-sm text-gray-600 mt-2">{supervisor.description}</p>
+              </motion.div>
+            ))}
         </div>
-        {expanded === "purpose" && (
-          <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden p-4 text-gray-600 bg-blue-50 rounded"
-          >
-            This project aims to assist healthcare professionals by providing a
-            tool for accurate and efficient liver tumor segmentation from CT
-            scans. By leveraging advanced AI techniques, we strive to enhance
-            medical diagnostics and treatment planning.
-          </motion.div>
-        )}
       </section>
 
-      {/* Methodology Section */}
+      {/* Committee Members Section */}
       <section className="mb-6">
-        <div
-          className="cursor-pointer p-3 rounded-lg bg-blue-100 hover:bg-blue-200 transition-all duration-300"
-          onClick={() => toggleSection("methodology")}
-        >
-          <h3 className="text-xl font-semibold text-gray-700 flex items-center">
-            Methodology{" "}
-            <span
-              className={`ml-auto transform transition-transform ${
-                expanded === "methodology" ? "rotate-180" : "rotate-0"
-              }`}
-            >
-              ▼
-            </span>
-          </h3>
-        </div>
-        {expanded === "methodology" && (
-          <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden p-4 text-gray-600 bg-blue-50 rounded"
-          >
-            Our methodology involves using state-of-the-art deep learning
-            models, specifically transformer-based architectures like nnFormer
-            and UNETR. These models process 3D CT images to identify and segment
-            liver tumors with high precision. The process includes:
-            <ul className="list-disc list-inside mt-2">
-              <li>Preprocessing CT scans for optimal model performance.</li>
-              <li>Training the model on the LITS17 dataset for segmentation tasks.</li>
-              <li>Visualizing the results for better interpretation by clinicians.</li>
-            </ul>
-          </motion.div>
-        )}
-      </section>
 
-      {/* Features Section */}
-      <section className="mb-6">
-        <div
-          className="cursor-pointer p-3 rounded-lg bg-blue-100 hover:bg-blue-200 transition-all duration-300"
-          onClick={() => toggleSection("features")}
-        >
-          <h3 className="text-xl font-semibold text-gray-700 flex items-center">
-            Features{" "}
-            <span
-              className={`ml-auto transform transition-transform ${
-                expanded === "features" ? "rotate-180" : "rotate-0"
-              }`}
-            >
-              ▼
-            </span>
-          </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {teamMembers
+            .filter((member) => member.designation === "Committee Member")
+            .map((committeeMember, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center text-center bg-white rounded-lg shadow-lg p-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <img
+                  src={committeeMember.imageUrl}
+                  alt={committeeMember.name}
+                  className="w-32 h-32 rounded-full mb-4 object-cover"
+                />
+                <h4 className="text-lg font-semibold text-gray-800">{committeeMember.name}</h4>
+                <p className="text-sm text-gray-500">{committeeMember.designation}</p>
+                <p className="text-sm text-gray-600 mt-2">{committeeMember.description}</p>
+              </motion.div>
+            ))}
         </div>
-        {expanded === "features" && (
-          <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden p-4 text-gray-600 bg-blue-50 rounded"
-          >
-            <ul className="list-disc list-inside">
-              <li>Upload and analyze CT scans with ease.</li>
-              <li>View segmentation results to distinguish tumors from healthy liver tissue.</li>
-              <li>Visualize data through interactive charts for better understanding.</li>
-              <li>Learn about the technology and models used in the "About" section.</li>
-            </ul>
-          </motion.div>
-        )}
       </section>
     </div>
   );

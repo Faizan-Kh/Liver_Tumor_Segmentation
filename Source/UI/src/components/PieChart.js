@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -6,29 +6,105 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function PieChart() {
-  const pieData = {
+  const [pieData, setPieData] = useState({
     labels: ["Tumor", "Liver"],
     datasets: [
       {
-        data: [31.41, 68.59], // Example values: Tumor 20%, Liver 80%
+        data: [31.41, 68.59], // Example values: Tumor 31.41%, Liver 68.59%
         backgroundColor: ["#ff6384", "#36a2eb"],
         hoverBackgroundColor: ["#ff6384", "#36a2eb"],
       },
     ],
+  });
+
+  // State to manage which part of the chart is being edited
+  const [editing, setEditing] = useState(null);
+
+  // Function to handle clicking and changing values
+  const handleTextChange = (value, part) => {
+    const updatedData = { ...pieData };
+    const index = part === "Tumor" ? 0 : 1;
+    
+    // Update the clicked part of the chart
+    updatedData.datasets[0].data[index] = parseFloat(value);
+
+    // Update the other value to maintain the total as 100%
+    updatedData.datasets[0].data[1 - index] = 100 - updatedData.datasets[0].data[index];
+
+    setPieData(updatedData);
+    setEditing(null); // Close the text input after editing
   };
 
   return (
     <div>
-      <h2 className="text-lg font-semibold">Tumor vs Liver Percentage</h2>
+      <div className="flex justify-center">
+      <h2 className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse">
+      Liver vs Tumor Area</h2>
+      </div>
+
+      {/* Text to show current values and make them editable */}
+      <div className="flex justify-center mt-4">
+        <div className="mr-4">
+          <h3 className="text-xl">
+            Tumor:{" "}
+            {editing === "Tumor" ? (
+              <span>
+                <input
+                  type="number"
+                  value={pieData.datasets[0].data[0]}
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  onBlur={(e) => handleTextChange(e.target.value, "Tumor")}
+                  autoFocus
+                />
+              </span>
+            ) : (
+              <span
+                className="cursor-pointer text-black-500"
+                onClick={() => setEditing("Tumor")}
+              >
+                {pieData.datasets[0].data[0].toFixed(2)}%
+              </span>
+            )}
+          </h3>
+        </div>
+        <div>
+          <h3 className="text-xl">
+            Liver:{" "}
+            {editing === "Liver" ? (
+              <span>
+                <input
+                  type="number"
+                  value={pieData.datasets[0].data[1]}
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  onBlur={(e) => handleTextChange(e.target.value, "Liver")}
+                  autoFocus
+                />
+              </span>
+            ) : (
+              <span
+                className="cursor-pointer text-black-500"
+                onClick={() => setEditing("Liver")}
+              >
+                {pieData.datasets[0].data[1].toFixed(2)}%
+              </span>
+            )}
+          </h3>
+        </div>
+      </div>
+
+      {/* Pie chart */}
       <div className="mt-6 p-4 bg-white rounded shadow">
-        <Pie 
-          data={pieData} 
-          className="mt-4"
+        <Pie
+          data={pieData}
           options={{
             responsive: true,
             plugins: {
               legend: {
-                position: 'top',
+                position: "bottom", // Legend is positioned at the bottom
               },
             },
             maintainAspectRatio: false,
