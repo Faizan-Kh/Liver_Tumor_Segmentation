@@ -8,24 +8,14 @@ import ShowImages from "./components/ShowImages";
 import PieChart from "./components/PieChart";
 import AboutPage from "./components/AboutPage";
 import ProtectedRoute from "./components/ProtectedRoute"; // Import the ProtectedRoute component
+import HelpScreen from "./components/Help";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
       <div className="bg-gray-50 min-h-screen">
-        {/* Header Section */}
-        <header className="p-4 bg-blue-500 text-white shadow-lg flex justify-between items-center">
-          <div className="flex justify-center w-full">
-            <h1 className="text-xl font-bold text-center">Liver Tumor Segmentation Workspace</h1>
-          </div>
-          {/* User Profile Button */}
-          <div className="ml-auto">
-            <UserButton
-              className="transform scale-125" // Adjust the scaling as needed
-              style={{ padding: "10px", borderRadius: "8px", fontSize: "16px" }} // Optional additional inline styles
-            />
-          </div>
-        </header>
+        <Header/>
 
 
 
@@ -58,11 +48,12 @@ function App() {
                 }
               />
               <Route
-              path="/sign-up"
-              element={
-                <SignUp/>
-              }
+                path="/sign-up"
+                element={
+                  <SignUp />
+                }
               />
+               <Route path="/help" element={<HelpScreen/>} />
             </Routes>
           </main>
         </div>

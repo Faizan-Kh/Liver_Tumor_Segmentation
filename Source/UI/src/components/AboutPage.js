@@ -31,7 +31,7 @@ function AboutPage() {
   ];
 
   return (
-    <div className="max-w-screen-lg mx-auto mt-5 p-6 bg-grey-50 rounded shadow-lg overflow-hidden">
+    <div className="w-full h-auto p-6 bg-gray-50 rounded">
       {/* Header */}
       <h2
         className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse hover:text-blue-600 transition-all duration-300 ease-in-out"

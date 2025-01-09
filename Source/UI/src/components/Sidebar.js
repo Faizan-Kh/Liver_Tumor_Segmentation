@@ -5,8 +5,11 @@ function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className="h-full w-1/4 bg-gray-100 shadow-lg h-screen p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Navigation</h2>
+    <aside className="w-1/4 bg-gray-100 shadow-lg min-h-screen p-6 sticky top-0">
+      {/* Interactive Navigation Heading */}
+      <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-6 transition-transform transform hover:scale-105">
+        Navigation
+      </h2>
       <nav className="space-y-4">
         {[
           { path: "/", label: "Home" },

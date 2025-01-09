@@ -181,9 +181,10 @@ function UploadImage() {
 
   return (
     <div className="w-full h-auto p-6 bg-gray-50 rounded">
-      <h2 className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse">
+      <h2 className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse transition-all duration-300 ease-in-out hover:text-blue-500">
         Upload Image & Patient Details
       </h2>
+
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="mb-6">
@@ -222,7 +223,7 @@ function UploadImage() {
               value={patientDetails.age}
               onChange={handleInputChange}
               className={`mt-2 block w-full p-3 rounded-md border ${patientDetails.ageError ? "border-red-500" : "border-gray-300"
-              }`}
+                }`}
               placeholder="Enter patient age"
               required
             />
