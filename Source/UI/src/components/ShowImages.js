@@ -102,7 +102,7 @@ function ShowImages() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="h-[100vh] w-full overflow-auto bg-gray-50 p-6">
+    <div className="min-h-screen w-full overflow-auto bg-gray-50 p-6 border-l border-blue-500">
       <h2 className="text-3xl font-extrabold text-gray-800 mb-6 text-center animate-pulse transition-all duration-300 ease-in-out hover:text-blue-500">
         Tumor Segmentation
       </h2>

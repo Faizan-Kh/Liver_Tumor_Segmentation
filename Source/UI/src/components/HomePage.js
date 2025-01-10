@@ -4,7 +4,7 @@ import { FaUpload, FaEye, FaChartPie, FaInfoCircle, FaUsers } from "react-icons/
 
 function HomePage() {
   return (
-    <div className="text-center p-8 min-h-screen bg-cover bg-center bg-gray-50 ">
+    <div className="text-center p-6 min-h-screen bg-cover bg-center bg-gray-50 border-l border-blue-500">
       <h1
         className="text-4xl font-extrabold mb-6 animate-pulse text-gray-800 hover:text-blue-600 transition-all duration-300 ease-in-out"
       >

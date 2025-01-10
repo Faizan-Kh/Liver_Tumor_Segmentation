@@ -22,7 +22,7 @@ function App() {
         {/* Layout with Sidebar and Main Content */}
         <div className="flex">
           <Sidebar /> {/* Sidebar remains consistent across all routes */}
-          <main className="flex-1 p-6 bg-white shadow-inner">
+          <main className="flex-1 bg-white shadow-inner">
             <Routes>
               {/* HomePage and AboutPage are publicly accessible without authentication */}
               <Route path="/" element={<HomePage />} />

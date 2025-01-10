@@ -180,7 +180,7 @@ function UploadImage() {
   };
 
   return (
-    <div className="w-full h-auto p-6 bg-gray-50 rounded">
+    <div className="min-h-screen h-auto p-6 bg-gray-50 border-l border-blue-500">
       <h2 className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse transition-all duration-300 ease-in-out hover:text-blue-500">
         Upload Image & Patient Details
       </h2>
