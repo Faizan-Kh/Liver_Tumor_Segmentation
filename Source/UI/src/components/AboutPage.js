@@ -31,7 +31,7 @@ function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50 border-l border-blue-500">
+    <div className="min-h-screen p-6 bg-gray-50">
       {/* Header */}
       <h2
         className="text-3xl font-extrabold text-gray-800 mb-4 text-center animate-pulse hover:text-blue-600 transition-all duration-300 ease-in-out"

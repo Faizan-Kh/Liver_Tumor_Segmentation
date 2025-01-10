@@ -41,7 +41,7 @@ function Sidebar() {
         </h2>
       )}
 
-      <nav className="space-y-4 mt-12">
+      <nav className="space-y-6 mt-14">
         {[
           {
             path: "/",
@@ -80,7 +80,7 @@ function Sidebar() {
           >
             {/* If sidebar is collapsed, show only icon with larger size and center it */}
             <span
-              className={` ${
+              className={ `${
                 isCollapsed ? "text-l" : "text-base"
               } flex justify-center items-center`} // Increase icon size when collapsed
             >
