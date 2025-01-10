@@ -8,7 +8,7 @@ function HomePage() {
       <h1
         className="text-4xl font-extrabold mb-6 animate-pulse text-gray-800 hover:text-blue-600 transition-all duration-300 ease-in-out"
       >
-        Welcome to Liver Tumor Segmentation
+        Welcome to CodecroodMed - Liver Tumor Segmentation Workspace
       </h1>
 
       <p className="mt-2 text-gray-800 mb-10 text-lg">
