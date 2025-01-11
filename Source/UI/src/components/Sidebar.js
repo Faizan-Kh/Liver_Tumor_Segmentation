@@ -76,13 +76,13 @@ function Sidebar() {
               location.pathname === path
                 ? "bg-blue-600 text-white font-semibold scale-105"
                 : "text-blue-500 hover:bg-blue-500 hover:text-white"
-            } ${isCollapsed ? "px-6" : "px-4"}`} // Increase padding when collapsed for a wider highlighted area
+            } ${isCollapsed ? "px-1.5" : "px-4"}`} // Increase padding when collapsed for a wider highlighted area
           >
             {/* If sidebar is collapsed, show only icon with larger size and center it */}
             <span
               className={ `${
-                isCollapsed ? "text-l" : "text-base"
-              } flex justify-center items-center`} // Increase icon size when collapsed
+                isCollapsed ? "text-xl" : "text-base"
+              } flex justify-center items-center mr-2`} // Increase icon size when collapsed
             >
               {icon}
             </span>
