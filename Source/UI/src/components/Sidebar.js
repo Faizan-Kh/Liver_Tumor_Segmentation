@@ -21,14 +21,14 @@ function Sidebar() {
 
   return (
     <aside
-      className={`bg-gray-100 shadow-lg min-h-screen p-6 sticky top-0 transition-all duration-300 ${
+      className={`bg-gray-100 shadow-lg min-h-screen p-4 sticky top-0 transition-all duration-300 ${
         isCollapsed ? "w-20" : "w-1/4"
       } relative`}
     >
       {/* Toggle Sidebar Button */}
       <button
         onClick={toggleSidebar}
-        className="absolute top-6 right-6 p-2 bg-gray-200 rounded-full focus:outline-none z-10"
+        className="absolute top-6 right-6 p-2 bg-gray-200 rounded-full focus:outline-none z-10 items-center justify-center"
       >
         {isCollapsed ? <FaChevronRight /> : <FaChevronLeft />}{" "}
         {/* Toggle icon */}
@@ -41,7 +41,7 @@ function Sidebar() {
         </h2>
       )}
 
-      <nav className="space-y-6 mt-14">
+      <nav className="space-y-6 mt-14 justify-center items-center">
         {[
           {
             path: "/",
@@ -72,11 +72,11 @@ function Sidebar() {
           <Link
             key={path}
             to={path}
-            className={`flex items-center px-2 py-2 rounded transition-all duration-300 ${
+            className={`flex items-center p-4 rounded transition-all duration-300 ${
               location.pathname === path
                 ? "bg-blue-600 text-white font-semibold scale-105"
                 : "text-blue-500 hover:bg-blue-500 hover:text-white"
-            } ${isCollapsed ? "px-1" : "px-4"}`} // Increase padding when collapsed for a wider highlighted area
+            } ${isCollapsed ? "px-3" : "px-4"}`} // Increase padding when collapsed for a wider highlighted area
           >
             {/* If sidebar is collapsed, show only icon with larger size and center it */}
             <span
