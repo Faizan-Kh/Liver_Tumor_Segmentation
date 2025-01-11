@@ -72,7 +72,7 @@ function Sidebar() {
           <Link
             key={path}
             to={path}
-            className={`flex items-center p-4 rounded transition-all duration-300 ${
+            className={`flex items-center p-4 rounded-lg transition-all duration-300 ${
               location.pathname === path
                 ? "bg-blue-600 text-white font-semibold scale-105"
                 : "text-blue-500 hover:bg-blue-500 hover:text-white"
