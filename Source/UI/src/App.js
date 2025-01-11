@@ -10,6 +10,8 @@ import AboutPage from "./components/AboutPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import HelpScreen from "./components/Help";
 import Header from "./components/Header";
+import BioDigitalEmbed from "./3dmodel/BioDigitalEmbed";
+import BioDigitalAnatomyViewer from "./3dmodel/BioDigitalAnatomyViewer ";
 
 function App() {
   return (
@@ -45,6 +47,10 @@ function App() {
               <Route
                 path="/workspace/pie"
                 element={<ProtectedRoute element={<PieChart />} />}
+              />
+              <Route
+                path="/workspace/anatomy"
+                element={<ProtectedRoute element={<BioDigitalEmbed />} />}
               />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/help" element={<HelpScreen />} />

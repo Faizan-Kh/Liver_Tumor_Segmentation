@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-split-pane": "^0.1.92",
     "react-three-fiber": "^6.0.13",
+    "react-tooltip": "^5.28.0",
     "three": "^0.172.0",
     "vtk.js": "^32.9.0"
   },

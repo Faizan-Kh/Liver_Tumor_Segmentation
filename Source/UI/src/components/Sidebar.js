@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaChevronLeft,
   FaChevronRight,
+  FaSkull,
 } from "react-icons/fa"; // Import icons
 
 function Sidebar() {
@@ -62,6 +63,11 @@ function Sidebar() {
             path: "/workspace/pie",
             label: "Pie Chart",
             icon: <FaChartPie />,
+          },
+          {
+            path: "/workspace/anatomy",
+            label: "Human Anatomy",
+            icon: <FaSkull/>,
           },
           {
             path: "/about",
